@@ -90,8 +90,9 @@ public class Followers {
 
 	            // 次のページへのカーソル取得
 	            cursor = ids.getNextCursor();
-	        } while (ids.hasNext());
-			
+//	        } while (ids.hasNext());
+			} while (false);
+	           
 			showIDs(friendsIDs, targetUserID);
 		
 		if(isRootUser) { this.friendsIDs = new ArrayList<Long>(friendsIDs); }
@@ -112,7 +113,6 @@ public class Followers {
 				if(idList.size()-c < 100) { end = idList.size()-c; }
 
 				long [] idlistArray = toArr(idList.subList(c, c+end));
-				System.out.println();
 				ResponseList<User> responseUsers = TwitterUtility.getTwitter().lookupUsers(idlistArray);
 				System.out.println("idListArray = [" + idlistArray.length + "], responseUsers = [" + responseUsers.size() + "]");
 				for(int i=0; i<responseUsers.size(); i++) {
