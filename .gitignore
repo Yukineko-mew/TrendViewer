@@ -14,5 +14,5 @@ hs_err_pid*
 # Eclipse setting files
 .settings/
 .classpath
-822719520/
+.DS_Store
 /bin/
